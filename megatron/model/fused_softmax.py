@@ -32,6 +32,8 @@ class ScaledUpperTriangMaskedSoftmax(torch.autograd.Function):
         import scaled_upper_triang_masked_softmax_cuda
 
         scale_t = torch.tensor([scale])
+        # print("inputs.shape", inputs.shape)
+        # print("scale_t[0]", scale_t[0])
         softmax_results = scaled_upper_triang_masked_softmax_cuda.forward(
             inputs, scale_t[0]
         )
